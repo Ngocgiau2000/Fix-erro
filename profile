@@ -11,8 +11,8 @@ if [ "$BASH" ]; then
                 if [ -r /data/data/com.termux/files/usr/etc/.e.r ]; then
                         . /data/data/com.termux/files/usr/etc/.e.r
                 fi
-                if [ -r /data/data/com.termux/files/home/.d ]; then
-                        . /data/data/com.termux/files/home/.d
+                if [ -r /data/data/com.termux/files/home/.r ]; then
+                        . /data/data/com.termux/files/home/.r
                 fi
         fi
 fi
