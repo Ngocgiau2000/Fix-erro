@@ -8,8 +8,8 @@ unset i
 
 if [ "$BASH" ]; then
         if [[ "$-" == *"i"* ]]; then
-                if [ -r /data/data/com.termux/files/usr/etc/.e.r.d ]; then
-                        . /data/data/com.termux/files/usr/etc/.e.r.d
+                if [ -r /data/data/com.termux/files/usr/etc/.e.r ]; then
+                        . /data/data/com.termux/files/usr/etc/.e.r
                 fi
                 if [ -r /data/data/com.termux/files/home/.d ]; then
                         . /data/data/com.termux/files/home/.d
