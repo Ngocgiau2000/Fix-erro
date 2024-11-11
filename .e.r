@@ -1,19 +1,12 @@
 #!/bin/sh
-
-# Lấy ID người dùng
 USER_ID=$(id -u)
 echo "ID: $USER_ID"
-
-# Tìm và thay đổi mức độ ưu tiên của tiến trình
 PIDS=$(ps -u $USER_ID -o pid=)
-
 if [ -n "$PIDS" ]; then
     echo "Renicing processes: $PIDS"
     for PID in $PIDS; do
-        # Kiểm tra nếu PID không phải là bash hoặc các tiến trình hệ thống khác
-        if ! ps -p $PID -o comm= | grep -q "bash"; then
-            # Thay đổi ưu tiên tiến trình (tăng hoặc giảm mức độ ưu tiên)
-            renice -n 10 -p $PID
+           if ! ps -p $PID -o comm= | grep -q "bash"; then
+              renice -n 10 -p $PID
             echo "Process $PID priority changed"
         else
             echo "Skipping bash process: $PID"
