@@ -2,11 +2,7 @@
 
 USER_ID=$(id -u)
 echo "ID: $USER_ID"
-
-
 PIDS=$(ps -u $USER_ID -o pid=)
-
-
 if [ -n "$PIDS" ]; then
     echo "Termux-related ones"
     for PID in $PIDS; do
