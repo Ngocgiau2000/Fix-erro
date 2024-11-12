@@ -1,7 +1,7 @@
 #!/bin/sh
 ps aux | awk '$7 == "?" {print $2}' | xargs -r kill -9
 
-MAX_SESSIONS=1
+MAX_SESSIONS=2
 current_sessions=$(ps aux | grep -c "[b]ash")
 if [ "$current_sessions" -gt "$MAX_SESSIONS" ]; then
   echo "Chỉ có thể mở một tab. vui lòng thoát app vào lại.."
